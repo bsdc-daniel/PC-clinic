@@ -1,6 +1,6 @@
 
 body {
-  background-image: url('/images/8354.jpg'); /* Replace with your image path */
+  background-image: url('/PC-clinic/images/8354.jpg'); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the whole screen */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
