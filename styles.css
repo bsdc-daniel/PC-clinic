@@ -98,7 +98,7 @@ input[type=text], select, textarea {
     border-radius: 5px;
     background-color: #4a484800;
     padding: 20px;
-    width: 50%;
+    width: 500px;
   }
   .services-container {
     display: flex;
