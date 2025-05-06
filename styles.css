@@ -1,12 +1,4 @@
 
-body {
-  background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif'); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the whole screen */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  height: 100vh; /* Full height */
-  margin: 0;
-}
     
 .active5{
   background-color: blue;
