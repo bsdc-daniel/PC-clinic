@@ -57,7 +57,10 @@ img{
     flex-wrap: wrap;
     margin-right: 50%;
 
-    
+form{
+  width: 500px;
+
+  }  
 }
 .active {
     background-color: #303dec;
