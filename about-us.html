@@ -6,17 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<style>
-html {
-  background: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif') no-repeat center center fixed;
-  background-size: cover;
-}
-        </style>
+
 <body>
-    
-   <div class="writing"><h1 class="write">services</h1>
-    <h2 class="write">We offer several services such as multiple device repairs such as phones and computer and we offer data recovery as long as software installation and more for a small price.
-</h2></div>
+   <div class="bg"></div>
+    <div class="content">
    
         
     
@@ -35,7 +28,9 @@ html {
              </ul>
             
         </nav>
-        
+        <div class="writing"><h1 class="write">services</h1>
+    <h2 class="write">We offer several services such as multiple device repairs such as phones and computer and we offer data recovery as long as software installation and more for a small price.
+</h2></div>
         <script>
             const toggleButton = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -45,6 +40,17 @@ html {
             });
           </script>
       <style>
+        .bg {
+  background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
         .write{
             color: rgb(233, 35, 35);
         }
@@ -271,7 +277,7 @@ html {
     }
 </style>
        
- 
+    </div>
        
 
     
