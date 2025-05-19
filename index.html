@@ -31,8 +31,12 @@
 
      </ul>
 
-     <input type="text" id="searchInput" placeholder="Search this page">
-  <button onclick="searchText()">Search</button>
+     <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search this page">
+    <button onclick="searchText()">
+      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
+    </button>
+  </div>
     
 </nav>
 <script>
@@ -238,20 +242,30 @@
     }
 </style>
 <script>
-    function searchText() {
+     function searchText() {
       // Remove previous highlights
-      const previousHighlights = document.querySelectorAll('.highlight');
-      previousHighlights.forEach(el => {
+      const highlights = document.querySelectorAll('.highlight');
+      highlights.forEach(el => {
         el.outerHTML = el.innerText;
       });
 
-      const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      const input = document.getElementById("searchInput");
+      const searchTerm = input.value.trim().toLowerCase();
       if (!searchTerm) return;
 
-      const bodyText = document.body.innerHTML;
-      const regex = new RegExp(`(${searchTerm})`, 'gi');
-
-      document.body.innerHTML = bodyText.replace(regex, '<span class="highlight">$1</span>');
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue.toLowerCase().includes(searchTerm)) {
+          const span = document.createElement("span");
+          span.className = "highlight";
+          const regex = new RegExp(`(${searchTerm})`, 'ig');
+          span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+          const temp = document.createElement("div");
+          temp.innerHTML = span.innerHTML;
+          node.parentNode.replaceChild(temp, node);
+        }
+      }
     }
 </script>
      

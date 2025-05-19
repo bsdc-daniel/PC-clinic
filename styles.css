@@ -1,4 +1,37 @@
-.highlight {
+.search-container {
+      position: relative;
+      width: fit-content;
+      margin: 20px;
+    }
+
+    /* Resizable search input */
+    .search-container input[type="text"] {
+      padding: 8px 35px 8px 10px;
+      font-size: 16px;
+      resize: horizontal;
+      min-width: 200px;
+    }
+
+    /* Icon button inside the input */
+    .search-container button {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    /* Optional: style for the icon */
+    .search-container button img {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Highlight style */
+    .highlight {
       background-color: yellow;
     }
     
