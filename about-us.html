@@ -29,10 +29,10 @@
             
         </nav>
         <div>
-      <div> <div class="writing"> <h1>Services</h1>
+      <div class="content"> <div class="writing"> <h1>Services</h1>
     <h2 class="write">We offer several services such as multiple device repairs such as phones and computer and we offer data recovery as long as software installation and more for a small price.
 </h2></div></div>
-<img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img"></div>
+<div class="image-wrapper"><img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img"></div></div>
         <script>
             const toggleButton = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -42,6 +42,23 @@
             });
           </script>
       <style>
+        .image-wrapper img {
+    width: 100px; /* adjust size as needed */
+    height: auto;
+}
+
+        .image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+        .content{
+             position: relative;
+    padding: 20px;
+    min-height: 80vh;
+        }
+        
+
         body {
     margin: 0;
     font-family: sans-serif;
