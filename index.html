@@ -30,6 +30,7 @@
        <li><a href="/PC-clinic/about-us.html">About</a></li>
 
      </ul>
+
      <input type="text" id="searchInput" placeholder="Search this page">
   <button onclick="searchText()">Search</button>
     
@@ -78,6 +79,9 @@
 </footer>
 
 <style>
+    input{
+        width: 300px;
+    }
     .slogan-write{
           font-size: 3rem;
 
@@ -233,6 +237,23 @@
         }
     }
 </style>
+<script>
+    function searchText() {
+      // Remove previous highlights
+      const previousHighlights = document.querySelectorAll('.highlight');
+      previousHighlights.forEach(el => {
+        el.outerHTML = el.innerText;
+      });
+
+      const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+      if (!searchTerm) return;
+
+      const bodyText = document.body.innerHTML;
+      const regex = new RegExp(`(${searchTerm})`, 'gi');
+
+      document.body.innerHTML = bodyText.replace(regex, '<span class="highlight">$1</span>');
+    }
+</script>
      
 
     
