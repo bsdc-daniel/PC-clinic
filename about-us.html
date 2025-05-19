@@ -32,7 +32,7 @@
       <div class="content"> <div class="writing"> <h1>Services</h1>
     <h2 class="write">We offer several services such as multiple device repairs such as phones and computer and we offer data recovery as long as software installation and more for a small price.
 </h2></div></div>
-<div class="image-wrapper"><img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img"></div></div>
+<img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img"></div>
         <script>
             const toggleButton = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -42,16 +42,7 @@
             });
           </script>
       <style>
-        .image-wrapper img {
-    width: 100px; /* adjust size as needed */
-    height: auto;
-}
-
-        .image-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
+        
         .content{
              position: relative;
     padding: 20px;
@@ -64,11 +55,22 @@
     font-family: sans-serif;
 }
          .college-img{
-     position: absolute;
-    top: 0;
-    right: 0;
-    height: 400px;
-    width: 400px;
+   top: 0;
+        right: 0;
+        position: fixed;
+       
+    text-align: center;
+    
+    display: flex;
+    width: 20%;
+  padding: 1rem;
+  font-size: 1rem;
+  
+  
+  border-radius: 1rem;
+  margin-top: 10rem;
+  margin-right: 10rem;
+  margin-left: 100px;
             }
         .bg {
   background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
