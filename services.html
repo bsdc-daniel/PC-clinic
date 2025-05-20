@@ -237,51 +237,51 @@
           }
       }
          
- .overlay-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      pointer-events: none; /* So it doesn't interfere with clicking */
-      z-index: 2;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* for contrast */
-    }
-   html, body {
-      height: 100%;
+    html, body {
       margin: 0;
+      height: 100%;
+      font-family: sans-serif;
     }
 
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      font-family: sans-serif;
     }
 
     main {
       flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
+      padding-top: 120px; /* Offset for fixed image area */
     }
 
     .container {
-      position: relative;
-      width: 300px; /* Match image size */
-      height: 300px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      z-index: 10;
     }
 
     .image-button {
       width: 100%;
       height: 100%;
-      cursor: pointer;
       display: block;
       object-fit: cover;
       border-radius: 8px;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      pointer-events: none;
+      z-index: 2;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
 
     .dropdown-content {
@@ -294,11 +294,11 @@
       border: 2px solid #ccc;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       opacity: 0;
-      transform: scale(0.1);
-      transform-origin: center;
+      transform: scale(0);
+      transform-origin: top left;
       transition: transform 0.3s ease, opacity 0.3s ease;
       border-radius: 8px;
-      z-index: 5;
+      z-index: 3;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -308,7 +308,6 @@
       opacity: 1;
       transform: scale(1);
     }
-
   </style>
   <script>
      function searchText() {
