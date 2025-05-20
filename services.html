@@ -63,42 +63,42 @@
     }
   });
       </script>
-    <!-- Top Left -->
+   <!-- Top Left -->
 <div class="dropdown-container top-left" onclick="toggleDropdown('dropdown1')">
-  <img src="/PC-clinic/images/OIP.jpg" class="image-button" alt="Top Left" />
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Top Left" />
   <div class="overlay-text">Repairs</div>
   <div class="dropdown-content" id="dropdown1"></div>
 </div>
 
 <!-- Top Center -->
 <div class="dropdown-container top-center" onclick="toggleDropdown('dropdown2')">
-  <img src="/PC-clinic/images/OIP.jpg" class="image-button" alt="Top Center" />
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Top Center" />
   <div class="overlay-text">Repairs</div>
   <div class="dropdown-content" id="dropdown2"></div>
 </div>
 
 <!-- Top Right -->
 <div class="dropdown-container top-right" onclick="toggleDropdown('dropdown3')">
-  <img src="/PC-clinic/images/OIP.jpg" class="image-button" alt="Top Right" />
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Top Right" />
   <div class="overlay-text">Repairs</div>
   <div class="dropdown-content" id="dropdown3"></div>
 </div>
 
 <!-- Bottom Left Center -->
 <div class="dropdown-container bottom-left-center" onclick="toggleDropdown('dropdown4')">
-  <img src="/PC-clinic/images/OIP.jpg" class="image-button" alt="Bottom Left Center" />
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Bottom Left Center" />
   <div class="overlay-text">Repairs</div>
   <div class="dropdown-content" id="dropdown4"></div>
 </div>
 
 <!-- Bottom Right Center -->
-<div class="/PC-clinic/images/OIP.jpg" onclick="toggleDropdown('dropdown5')">
+<div class="dropdown-container bottom-right-center" onclick="toggleDropdown('dropdown5')">
   <img src="https://via.placeholder.com/100" class="image-button" alt="Bottom Right Center" />
   <div class="overlay-text">Repairs</div>
   <div class="dropdown-content" id="dropdown5"></div>
 </div>
 
-      <h1>hi</h1>
+      
 
 
     
@@ -235,7 +235,7 @@
           }
       }
          
-   html, body {
+ html, body {
       margin: 0;
       height: 100%;
       font-family: sans-serif;
@@ -257,37 +257,38 @@
 
     .dropdown-container {
       position: fixed;
-      width: 100px;
-      height: 100px;
+      width: 250px;
+      height: 250px;
       cursor: pointer;
       z-index: 10;
+      margin: 50px; /* Apply 50px spacing from edges */
     }
 
     /* Positions */
     .top-left {
-      top: 20px;
-      left: 20px;
+      top: 0;
+      left: 0;
     }
 
     .top-center {
-      top: 20px;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
     }
 
     .top-right {
-      top: 20px;
-      right: 20px;
+      top: 0;
+      right: 0;
     }
 
     .bottom-left-center {
-      bottom: 20px;
+      bottom: 0;
       left: 25%;
       transform: translateX(-50%);
     }
 
     .bottom-right-center {
-      bottom: 20px;
+      bottom: 0;
       right: 25%;
       transform: translateX(50%);
     }
