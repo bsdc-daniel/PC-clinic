@@ -50,27 +50,54 @@
         toggleButton.addEventListener('click', () => {
           navLinks.classList.toggle('active');
         });
-        function toggleDropdown() {
-    const dropdown = document.getElementById("dropdown");
-    dropdown.classList.toggle("show");
+        function toggleDropdown(id) {
+    document.querySelectorAll('.dropdown-content').forEach(drop => {
+      if (drop.id !== id) drop.classList.remove('show');
+    });
+    document.getElementById(id).classList.toggle('show');
   }
 
   window.addEventListener("click", function(event) {
-    const dropdown = document.getElementById("dropdown");
-    if (!event.target.closest('.container')) {
-      dropdown.classList.remove("show");
+    if (!event.target.closest('.dropdown-container')) {
+      document.querySelectorAll('.dropdown-content').forEach(drop => drop.classList.remove('show'));
     }
   });
       </script>
-      <main>
-  <div class="container">
-    <img src="/PC-clinic/images/OIP.jpg" alt="Click me" class="image-button" onclick="toggleDropdown()" />
-    <div class="overlay-text"><h1>Repairs</h1></div>
-    <div class="dropdown-content" id="dropdown">
-      <!-- Content (empty or insert input/button/etc. here) -->
-    </div>
-  </div>
-</main>
+    <!-- Top Left -->
+<div class="dropdown-container top-left" onclick="toggleDropdown('dropdown1')">
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Top Left" />
+  <div class="overlay-text">Repairs</div>
+  <div class="dropdown-content" id="dropdown1"></div>
+</div>
+
+<!-- Top Center -->
+<div class="dropdown-container top-center" onclick="toggleDropdown('dropdown2')">
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Top Center" />
+  <div class="overlay-text">Repairs</div>
+  <div class="dropdown-content" id="dropdown2"></div>
+</div>
+
+<!-- Top Right -->
+<div class="dropdown-container top-right" onclick="toggleDropdown('dropdown3')">
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Top Right" />
+  <div class="overlay-text">Repairs</div>
+  <div class="dropdown-content" id="dropdown3"></div>
+</div>
+
+<!-- Bottom Left Center -->
+<div class="dropdown-container bottom-left-center" onclick="toggleDropdown('dropdown4')">
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Bottom Left Center" />
+  <div class="overlay-text">Repairs</div>
+  <div class="dropdown-content" id="dropdown4"></div>
+</div>
+
+<!-- Bottom Right Center -->
+<div class="dropdown-container bottom-right-center" onclick="toggleDropdown('dropdown5')">
+  <img src="https://via.placeholder.com/100" class="image-button" alt="Bottom Right Center" />
+  <div class="overlay-text">Repairs</div>
+  <div class="dropdown-content" id="dropdown5"></div>
+</div>
+
       <h1>hi</h1>
 
 
@@ -237,10 +264,11 @@
           }
       }
          
-    html, body {
+   html, body {
       margin: 0;
       height: 100%;
       font-family: sans-serif;
+      overflow-x: hidden;
     }
 
     body {
@@ -251,18 +279,46 @@
 
     main {
       flex: 1;
-      padding-top: 120px; /* Offset for fixed image area */
+      padding-top: 160px;
+      padding-bottom: 160px;
+      text-align: center;
     }
 
-    .container {
+    .dropdown-container {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      width: 250px;
-      height: 250px;
+      width: 100px;
+      height: 100px;
       cursor: pointer;
       z-index: 10;
-      margin-top: 60px;
+    }
+
+    /* Positions */
+    .top-left {
+      top: 20px;
+      left: 20px;
+    }
+
+    .top-center {
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .top-right {
+      top: 20px;
+      right: 20px;
+    }
+
+    .bottom-left-center {
+      bottom: 20px;
+      left: 25%;
+      transform: translateX(-50%);
+    }
+
+    .bottom-right-center {
+      bottom: 20px;
+      right: 25%;
+      transform: translateX(50%);
     }
 
     .image-button {
@@ -285,6 +341,7 @@
       z-index: 2;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
+
     .dropdown-content {
       position: absolute;
       top: 0;
@@ -308,6 +365,13 @@
     .dropdown-content.show {
       opacity: 1;
       transform: scale(1);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
     }
   </style>
   <script>
