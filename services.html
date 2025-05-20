@@ -50,25 +50,25 @@
         toggleButton.addEventListener('click', () => {
           navLinks.classList.toggle('active');
         });
-        function toggleDropdown() {
+         function toggleDropdown() {
     const dropdown = document.getElementById("dropdown");
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    dropdown.classList.toggle("show");
   }
 
-  // Optional: Click outside to close the dropdown
+  // Optional: Close dropdown if clicking outside
   window.addEventListener("click", function(event) {
     const dropdown = document.getElementById("dropdown");
     if (!event.target.closest('.container')) {
-      dropdown.style.display = "none";
+      dropdown.classList.remove("show");
     }
   });
       </script>
       <h1>hi</h1>
 
 <div class="container">
-  <img src="https://via.placeholder.com/100" alt="Click me" class="image-button" onclick="toggleDropdown()" />
+  <img src="/PC-clinic/images/OIP.jpg" alt="Click me" class="image-button" onclick="toggleDropdown()" />
   <div class="dropdown-content" id="dropdown">
-    <input type="text" placeholder="Enter text here..." />
+    <!-- Empty for now -->
   </div>
 </div>
     
@@ -233,28 +233,31 @@
               text-align: center;
           }
       }
-       .container {
+        .container {
       position: relative;
       display: inline-block;
     }
 
     .dropdown-content {
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #f9f9f9;
+      background-color: #fff;
       min-width: 200px;
-      padding: 10px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      padding: 0;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       border-radius: 5px;
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.3s ease, max-height 0.3s ease;
+      z-index: 1;
     }
 
-    .dropdown-content input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
+    .dropdown-content.show {
+      opacity: 1;
+      max-height: 200px; /* Adjust as needed */
+      padding: 10px;
     }
 
     .image-button {
