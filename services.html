@@ -237,7 +237,18 @@
           }
       }
          
-
+ .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      pointer-events: none; /* So it doesn't interfere with clicking */
+      z-index: 2;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* for contrast */
+    }
    html, body {
       height: 100%;
       margin: 0;
