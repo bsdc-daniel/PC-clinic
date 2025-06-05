@@ -63,6 +63,7 @@
     }
   });
       </script>
+      <div class="image-container">
    <!-- Top Left -->
 <div class="dropdown-container top-left" onclick="toggleDropdown('dropdown1')">
   <img src="/PC-clinic/images/OIP.jpg" class="image-button" alt="Top Left" />
@@ -99,7 +100,7 @@
     We offer Data Recovery on all devices ,prices depend on the device, please contact us for prices a
   </div>
 </div>
-
+      </div>
       
 
 
@@ -108,6 +109,18 @@
       
   
   <style>
+    .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* spacing between images */
+}
+
+.image-container img {
+  flex: 1 1 300px; /* grow/shrink, base size */
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
     .home-photo{
     margin-top: 60px;
     width: 40%;
