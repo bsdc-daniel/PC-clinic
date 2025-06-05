@@ -11,28 +11,43 @@ body {
 
 /* Navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: #333;
   color: white;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
-.navbar h1 {
-  margin: 0 1rem;
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .nav-links {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 1rem;
+  margin: 0;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .menu-toggle {
@@ -41,22 +56,45 @@ body {
   background: none;
   border: none;
   color: white;
+  cursor: pointer;
 }
 
+/* Search bar */
 .search-container {
   display: flex;
-  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
   margin-top: 0.5rem;
+  width: 100%;
+  order: 3;
 }
 
-/* Responsive Nav */
+.search-container input {
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-container button {
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
     flex-direction: column;
-    width: 100%;
     background: #444;
-    margin-top: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    display: none;
   }
 
   .nav-links.active {
@@ -68,8 +106,8 @@ body {
   }
 
   .search-container {
-    width: 100%;
-    justify-content: center;
+    order: 4;
+    margin-top: 10px;
   }
 }
 
