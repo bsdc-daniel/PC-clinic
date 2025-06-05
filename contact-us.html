@@ -12,8 +12,7 @@
       background: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif') no-repeat fixed center center/cover;
     }
 
-
-      .navbar {
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -21,6 +20,7 @@
       background: #333;
       color: white;
       flex-wrap: wrap;
+      position: relative;
     }
 
     .navbar-left {
@@ -87,13 +87,22 @@
     }
 
     @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       .nav-links {
         flex-direction: column;
         background: #444;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
+        width: 100%;
         padding: 1rem;
         display: none;
       }
@@ -104,8 +113,6 @@
 
       .menu-toggle {
         display: block;
-        top: 0;
-        right: 0;
       }
 
       .search-container {
@@ -196,18 +203,23 @@
 </head>
 <body>
   <nav class="navbar">
-    <div class="navbar-left">
-      <img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="PC Clinic Logo" class="logo" />
-      <h1 class="brand-title">PC-Clinic</h1>
+    <div class="navbar-top">
+      <div class="navbar-left">
+        <img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="PC Clinic Logo" class="logo" />
+        <h1 class="brand-title">PC-Clinic</h1>
+      </div>
+      <button class="menu-toggle">&#9776;</button>
     </div>
-    <button class="menu-toggle">&#9776;</button>
     <ul class="nav-links">
       <li><a href="/PC-clinic/index.html">Home</a></li>
       <li><a href="/PC-clinic/services.html">Services</a></li>
       <li><a href="/PC-clinic/contact-us.html" class="active">Contact</a></li>
       <li><a href="/PC-clinic/about-us.html">About</a></li>
     </ul>
-   
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search this page" />
+      <button onclick="searchText()">🔍</button>
+    </div>
   </nav>
 
   <div class="container">
@@ -223,8 +235,7 @@
     </form>
   </div>
 
-
- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6822.301779699746!2d-1.6324986456632957!3d52.80347405797929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a024776346265%3A0x1e14e88c557a62a1!2sBurton%20and%20South%20Derbyshire%20College!5e0!3m2!1sen!2suk!4v1749114595904!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4824.095851726747!2d-1.6324986456632957!3d52.80347405797929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a024776346265%3A0x1e14e88c557a62a1!2sBurton%20and%20South%20Derbyshire%20College!5e0!3m2!1sen!2suk!4v1749117847770!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
   <footer>
     <div class="footer-container">
