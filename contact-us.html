@@ -1,283 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="/script.js"></script>
-</head>
-<body>
-    <style>
-        body {
-          background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: cover;
-        }
-        </style>
-  
-   
-  <nav class="navbar">
-    <div class="logo"><img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="" class="logo"></div>
-    <h1>PC-Clinic</h1>
-    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>    
-    
-    <ul class="nav-links">
-    
-        
-       <li><a href="/PC-clinic/index.html" >Home</a></li>
-       <li><a href="/PC-clinic/services.html">services</a></li>
-       <li><a href="/PC-clinic/contact-us.html" class="active">Contact</a></li>
-       <li><a href="/PC-clinic/about-us.html">About</a></li>
-     </ul>
-      <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search this page">
-    <button onclick="searchText()">
-      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
-    </button>
-  </div>
-    
-</nav>
-<script>
-    const toggleButton = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-  
-    toggleButton.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-   
-      
-      <div>
-      <div class="container">
-        <form action="https://formsubmit.co/danielbrizastephens2007@gmail.com" method="POST">
-            <h1>Contact Us</h1>
-            <h3>First Name:</h3>
-            <input type="text" name="Full-name" required></input>
-            <h3>message:</h3>
-            <input type="text" name="message" required>
-            <h3>Email:</h3>
-            <input type="email" name="email" required>
-            <button type="submit">Send</button>
-       </form>
-      </div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1059.3922847956953!2d-1.6312628744017648!3d52.80059908590019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a024776346265%3A0x1e14e88c557a62a1!2sBurton%20and%20South%20Derbyshire%20College!5e1!3m2!1sen!2suk!4v1746528972740!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
-      </div>
-      <footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <p>We repair and inspsire futures.</p>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="/PC-clinic/index.html">Home</a></li>
-                <li><a href="/PC-clinic/services.html">Services</a></li>
-                <li><a href="/PC-clinic/contact-us.html" class="active5">Contact</a></li>
-                <li><a href="/PC-clinic/about-us.html">About</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com"><img src="/PC-clinic/images/facebook.png" alt="Facebook"></a>
-                <a href="https://www.twitter.com"><img src="/PC-clinic/images/1707226109new-twitter-logo-png.png" alt="Twitter"></a>
-                <a href="https://www.instagram.com"><img src="/PC-clinic/images/instagram.png" alt="Instagram"></a>
-            </div>
-        </div>
-    </div>
-    
-    <p class="footer-bottom">&copy; 2025 YourWebsite. All rights reserved.</p>
-</footer>
-
-<style>
-    iframe{
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: 90px;
-        margin-right: 100px;
-        
-        width: 700px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | PC Clinic</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif') no-repeat fixed center center/cover;
     }
-    
-    .home-photo{
-    margin-top: 60px;
-    width: 40%;
-    height: 40%;
-    margin-bottom: 60px;
-   }
-    
+
     .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #333333;
-  color: white;
-  border-radius: 20px;
-  max-height: 22px;
-  
-}
+      background: #333;
+      color: white;
+      padding: 0.75rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-}
+    .logo {
+      height: 40px;
+      width: auto;
+    }
 
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
+    .brand-title {
+      font-size: 1.5rem;
+      margin: 0;
+    }
 
-/* Hide nav links on small screens */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    padding: 1rem;
-    width: 200px;
-  }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
 
-  .menu-toggle {
-    display: block;
-  }
-}
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+      width: 100%;
+      order: 3;
+    }
+
+    .search-container input {
+      padding: 0.4rem;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .search-container button {
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .search-container {
+        order: 4;
+        margin-top: 10px;
+      }
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .container h1, .container h3 {
+      margin: 0.5rem 0;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      margin: 20px 0;
+    }
+
     footer {
-        background-color: #000000;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
 
     .footer-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
     }
 
     .footer-section {
-        flex: 1;
-        min-width: 250px;
-        padding: 10px;
+      flex: 1;
+      min-width: 250px;
+      padding: 10px;
     }
 
     .footer-section h3 {
-        margin-bottom: 10px;
+      margin-bottom: 10px;
     }
 
     .footer-section ul {
-        list-style: none;
-        padding: 0;
+      list-style: none;
+      padding: 0;
     }
 
     .footer-section ul li {
-        margin: 5px 0;
+      margin: 5px 0;
     }
 
     .footer-section ul li a {
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-    .footer-section ul li a:hover {
-        color: #00bcd4; /* Light Blue Hover Effect */
+      color: white;
+      text-decoration: none;
     }
 
     .social-icons a img {
-        width: 30px;
-        margin: 5px;
-        transition: 0.3s;
-    }
-
-    .social-icons a img:hover {
-        opacity: 0.7;
+      width: 30px;
+      margin: 5px;
     }
 
     .footer-bottom {
-        margin-top: 20px;
-        font-size: 14px;
-        opacity: 0.8;
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 10px;
     }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="PC Clinic Logo" class="logo" />
+      <h1 class="brand-title">PC-Clinic</h1>
+    </div>
+    <button class="menu-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/PC-clinic/index.html">Home</a></li>
+      <li><a href="/PC-clinic/services.html">Services</a></li>
+      <li><a href="/PC-clinic/contact-us.html" class="active">Contact</a></li>
+      <li><a href="/PC-clinic/about-us.html">About</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search this page" />
+      <button onclick="searchText()">🔍</button>
+    </div>
+  </nav>
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .footer-container {
-            flex-direction: column;
-            text-align: center;
-        }
-    }
-    .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 50%;
-            margin-left: 50px;
-            margin-right: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        .message {
-            margin-top: 10px;
-            color: green;
-            font-weight: bold;
-            display: none;
-        }
-</style>
-<script>
-     function searchText() {
-      // Remove previous highlights
-      const highlights = document.querySelectorAll('.highlight');
-      highlights.forEach(el => {
-        el.outerHTML = el.innerText;
-      });
+  <div class="container">
+    <form action="https://formsubmit.co/danielbrizastephens2007@gmail.com" method="POST">
+      <h1>Contact Us</h1>
+      <h3>First Name:</h3>
+      <input type="text" name="Full-name" required />
+      <h3>Message:</h3>
+      <input type="text" name="message" required />
+      <h3>Email:</h3>
+      <input type="email" name="email" required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
 
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12..." allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We repair and inspire futures.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/PC-clinic/index.html">Home</a></li>
+          <li><a href="/PC-clinic/services.html">Services</a></li>
+          <li><a href="/PC-clinic/contact-us.html">Contact</a></li>
+          <li><a href="/PC-clinic/about-us.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><img src="/PC-clinic/images/facebook.png" alt="Facebook"></a>
+          <a href="https://www.twitter.com"><img src="/PC-clinic/images/1707226109new-twitter-logo-png.png" alt="Twitter"></a>
+          <a href="https://www.instagram.com"><img src="/PC-clinic/images/instagram.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 PC Clinic. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    function searchText() {
+      document.querySelectorAll('.highlight').forEach(el => el.outerHTML = el.innerText);
       const input = document.getElementById("searchInput");
       const searchTerm = input.value.trim().toLowerCase();
       if (!searchTerm) return;
-
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
       while (walker.nextNode()) {
         const node = walker.currentNode;
         if (node.nodeValue.toLowerCase().includes(searchTerm)) {
@@ -291,9 +277,6 @@
         }
       }
     }
-</script>
-      
-    
-    
+  </script>
 </body>
 </html>
