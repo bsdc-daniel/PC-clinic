@@ -28,7 +28,15 @@
        <li><a href="/PC-clinic/services.html">services</a></li>
        <li><a href="/PC-clinic/contact-us.html" >Contact</a></li>
        <li><a href="/PC-clinic/about-us.html">About</a></li>
+
      </ul>
+
+     <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search this page">
+    <button onclick="searchText()">
+      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
+    </button>
+  </div>
     
 </nav>
 <script>
@@ -39,8 +47,8 @@
       navLinks.classList.toggle('active');
     });
   </script>
- <div><img src="/PC-clinic/images/pexels-mediocrememories-2225617.jpg" alt="fmirnif" class="home-photo">
-    <div class="slogan"><h1>Fixing PC's , Fueling Futures, Drivin by Passion</h1></div></div>
+ <img src="/PC-clinic/images/pexels-mediocrememories-2225617.jpg" alt="fmirnif" class="home-photo">
+    <img src="/PC-clinic/images/ChatGPT Image May 14, 2025, 09_36_56 AM.png" alt="trjt" class="slogan">
       
  
     
@@ -48,7 +56,7 @@
     <div class="footer-container">
         <div class="footer-section">
             <h3>About Us</h3>
-            <p>We provide high-quality content to help developers learn web development.</p>
+            <p>We repair and inspsire futures.</p>
         </div>
         
         <div class="footer-section">
@@ -75,6 +83,13 @@
 </footer>
 
 <style>
+    input{
+        width: 300px;
+    }
+    .slogan-write{
+          font-size: 3rem;
+
+    }
     .slogan{
       
         background-color: rgba(254, 255, 255, 0.795);
@@ -83,13 +98,17 @@
         position: fixed;
        
     text-align: center;
-    padding-top: 100px;
+    
     display: flex;
-    width: 20rem;
+    width: 20%;
   padding: 1rem;
   font-size: 1rem;
   
+  
   border-radius: 1rem;
+  margin-top: 10rem;
+  margin-right: 10rem;
+  margin-left: 100px;
     }
     
    .home-photo{
@@ -222,6 +241,33 @@
         }
     }
 </style>
+<script>
+     function searchText() {
+      // Remove previous highlights
+      const highlights = document.querySelectorAll('.highlight');
+      highlights.forEach(el => {
+        el.outerHTML = el.innerText;
+      });
+
+      const input = document.getElementById("searchInput");
+      const searchTerm = input.value.trim().toLowerCase();
+      if (!searchTerm) return;
+
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue.toLowerCase().includes(searchTerm)) {
+          const span = document.createElement("span");
+          span.className = "highlight";
+          const regex = new RegExp(`(${searchTerm})`, 'ig');
+          span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+          const temp = document.createElement("div");
+          temp.innerHTML = span.innerHTML;
+          node.parentNode.replaceChild(temp, node);
+        }
+      }
+    }
+</script>
      
 
     

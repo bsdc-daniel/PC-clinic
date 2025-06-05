@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -35,6 +35,12 @@
            <li><a href="/PC-clinic/contact-us.html" >Contact</a></li>
            <li><a href="/PC-clinic/about-us.html">About</a></li>
          </ul>
+          <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search this page">
+    <button onclick="searchText()">
+      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
+    </button>
+  </div>
         
     </nav>
     <script>
@@ -44,43 +50,77 @@
         toggleButton.addEventListener('click', () => {
           navLinks.classList.toggle('active');
         });
+        function toggleDropdown(id) {
+    document.querySelectorAll('.dropdown-content').forEach(drop => {
+      if (drop.id !== id) drop.classList.remove('show');
+    });
+    document.getElementById(id).classList.toggle('show');
+  }
+
+  window.addEventListener("click", function(event) {
+    if (!event.target.closest('.dropdown-container')) {
+      document.querySelectorAll('.dropdown-content').forEach(drop => drop.classList.remove('show'));
+    }
+  });
       </script>
-      <h1>hi</h1>
+      <div class="image-container">
+   <!-- Top Left -->
+<div class="dropdown-container top-left" onclick="toggleDropdown('dropdown1')">
+  <img src="/PC-clinic/images/OIP.jpg" class="image-button" alt="Top Left" />
+  <div class="overlay-text"><h1>Repairs</h1></div>
+  <div class="dropdown-content" id="dropdown1"></div>
+</div>
+
+<!-- Top Center -->
+<div class="dropdown-container top-center" onclick="toggleDropdown('dropdown2')">
+  <img src="/PC-clinic/images/hardware replacments.jpg" class="image-button" alt="Top Center" />
+  <div class="overlay-text"><h1>hardware Replacments</h1></div>
+  <div class="dropdown-content" id="dropdown2"></div>
+</div>
+
+<!-- Top Right -->
+<div class="dropdown-container top-right" onclick="toggleDropdown('dropdown3')">
+  <img src="/PC-clinic/images/software installation.jpg" class="image-button" alt="Top Right" />
+  <div class="overlay-text"><h1>Software Installation</h1></div>
+  <div class="dropdown-content" id="dropdown3"></div>
+</div>
+
+<!-- Bottom Left Center -->
+<div class="dropdown-container bottom-left-center" onclick="toggleDropdown('dropdown4')">
+  <img src="/PC-clinic/images/malware removal.jpg" class="image-button" alt="Bottom Left Center" />
+  <div class="overlay-text"><h1>Malware Removal</h1></div>
+  <div class="dropdown-content" id="dropdown4"></div>
+</div>
+
+<!-- Bottom Right Center -->
+<div class="dropdown-container bottom-right-center" onclick="toggleDropdown('dropdown5')">
+  <img src="/PC-clinic/images/data recovery.jpg" class="image-button" alt="Bottom Right Center" />
+  <div class="overlay-text"><h1>Data Recovery</h1></div>
+  <div class="dropdown-content" id="dropdown5">
+    We offer Data Recovery on all devices ,prices depend on the device, please contact us for prices a
+  </div>
+</div>
+      </div>
+      
 
 
     
 
-      <footer>
-      <div class="footer-container">
-          <div class="footer-section">
-              <h3>About Us</h3>
-              <p>We provide high-quality content to help developers learn web development.</p>
-          </div>
-          
-          <div class="footer-section">
-              <h3>Quick Links</h3>
-              <ul>
-                  <li><a href="/PC-clinic/index.html">Home</a></li>
-                  <li><a href="/PC-clinic/services.html" class="active5">Services</a></li>
-                  <li><a href="/PC-clinic/contact-us.html">Contact</a></li>
-                  <li><a href="/PC-clinic/about-us.html">About</a></li>
-              </ul>
-          </div>
-  
-          <div class="footer-section">
-              <h3>Follow Us</h3>
-              <div class="social-icons">
-                  <a href="https://www.facebook.com"><img src="/PC-clinic/images/facebook.png" alt="Facebook"></a>
-                  <a href="https://www.twitter.com"><img src="/PC-clinic/images/1707226109new-twitter-logo-png.png" alt="Twitter"></a>
-                  <a href="https://www.instagram.com"><img src="/PC-clinic/images/instagram.png" alt="Instagram"></a>
-              </div>
-          </div>
-      </div>
       
-      <p class="footer-bottom">&copy; 2025 YourWebsite. All rights reserved.</p>
-  </footer>
   
   <style>
+    .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* spacing between images */
+}
+
+.image-container img {
+  flex: 1 1 300px; /* grow/shrink, base size */
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
     .home-photo{
     margin-top: 60px;
     width: 40%;
@@ -209,7 +249,145 @@
               text-align: center;
           }
       }
+         
+ html, body {
+      margin: 0;
+      height: 100%;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      padding-top: 160px;
+      padding-bottom: 160px;
+      text-align: center;
+    }
+
+    .dropdown-container {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      cursor: pointer;
+      z-index: 10;
+      margin: 90px; /* Apply 50px spacing from edges */
+    }
+
+    /* Positions */
+    .top-left {
+      top: 0;
+      left: 0;
+    }
+
+    .top-center {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .top-right {
+      top: 0;
+      right: 0;
+    }
+
+    .bottom-left-center {
+      bottom: 0;
+      left: 25%;
+      transform: translateX(-50%);
+    }
+
+    .bottom-right-center {
+      bottom: 0;
+      right: 25%;
+      transform: translateX(50%);
+    }
+
+    .image-button {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      pointer-events: none;
+      z-index: 2;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: top left;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      border-radius: 8px;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dropdown-content.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
+  <script>
+     function searchText() {
+      // Remove previous highlights
+      const highlights = document.querySelectorAll('.highlight');
+      highlights.forEach(el => {
+        el.outerHTML = el.innerText;
+      });
+
+      const input = document.getElementById("searchInput");
+      const searchTerm = input.value.trim().toLowerCase();
+      if (!searchTerm) return;
+
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue.toLowerCase().includes(searchTerm)) {
+          const span = document.createElement("span");
+          span.className = "highlight";
+          const regex = new RegExp(`(${searchTerm})`, 'ig');
+          span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+          const temp = document.createElement("div");
+          temp.innerHTML = span.innerHTML;
+          node.parentNode.replaceChild(temp, node);
+        }
+      }
+    }
+</script>
 
     
     

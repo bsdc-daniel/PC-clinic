@@ -26,11 +26,17 @@
     <ul class="nav-links">
     
         
-       <li><a href="/PC-clinic/index.html" ></a>Home</a></li>
+       <li><a href="/PC-clinic/index.html" >Home</a></li>
        <li><a href="/PC-clinic/services.html">services</a></li>
        <li><a href="/PC-clinic/contact-us.html" class="active">Contact</a></li>
        <li><a href="/PC-clinic/about-us.html">About</a></li>
      </ul>
+      <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search this page">
+    <button onclick="searchText()">
+      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
+    </button>
+  </div>
     
 </nav>
 <script>
@@ -43,7 +49,7 @@
   </script>
    
       
-      
+      <div>
       <div class="container">
         <form action="https://formsubmit.co/danielbrizastephens2007@gmail.com" method="POST">
             <h1>Contact Us</h1>
@@ -56,13 +62,13 @@
             <button type="submit">Send</button>
        </form>
       </div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1059.3922847956953!2d-1.6312628744017648!3d52.80059908590019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a024776346265%3A0x1e14e88c557a62a1!2sBurton%20and%20South%20Derbyshire%20College!5e1!3m2!1sen!2suk!4v1746528972740!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1059.3922847956953!2d-1.6312628744017648!3d52.80059908590019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a024776346265%3A0x1e14e88c557a62a1!2sBurton%20and%20South%20Derbyshire%20College!5e1!3m2!1sen!2suk!4v1746528972740!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+      </div>
       <footer>
     <div class="footer-container">
         <div class="footer-section">
             <h3>About Us</h3>
-            <p>We provide high-quality content to help developers learn web development.</p>
+            <p>We repair and inspsire futures.</p>
         </div>
         
         <div class="footer-section">
@@ -89,6 +95,15 @@
 </footer>
 
 <style>
+    iframe{
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 90px;
+        margin-right: 100px;
+        
+        width: 700px;
+    }
     
     .home-photo{
     margin-top: 60px;
@@ -223,11 +238,12 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
+            width: 50%;
             margin-left: 50px;
             margin-right: 10px;
             margin-top: 10px;
             margin-bottom: 10px;
+            
         }
         label {
             font-weight: bold;
@@ -241,18 +257,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #218838;
-        }
+        
         .message {
             margin-top: 10px;
             color: green;
@@ -260,6 +265,33 @@
             display: none;
         }
 </style>
+<script>
+     function searchText() {
+      // Remove previous highlights
+      const highlights = document.querySelectorAll('.highlight');
+      highlights.forEach(el => {
+        el.outerHTML = el.innerText;
+      });
+
+      const input = document.getElementById("searchInput");
+      const searchTerm = input.value.trim().toLowerCase();
+      if (!searchTerm) return;
+
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue.toLowerCase().includes(searchTerm)) {
+          const span = document.createElement("span");
+          span.className = "highlight";
+          const regex = new RegExp(`(${searchTerm})`, 'ig');
+          span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+          const temp = document.createElement("div");
+          temp.innerHTML = span.innerHTML;
+          node.parentNode.replaceChild(temp, node);
+        }
+      }
+    }
+</script>
       
     
     

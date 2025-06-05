@@ -6,22 +6,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+   <div class="bg"></div>
+    <div class="content">
    
-    <style>
-        body {
-          background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: cover;
-        }
-        </style>
         
     
         <nav class="navbar">
             <div class="logo"><img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="" class="logo"></div>
             <h1>PC-Clinic</h1>
-            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>    
+            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>s
+               
             
             <ul class="nav-links">
             
@@ -31,8 +27,24 @@
                <li><a href="/PC-clinic/contact-us.html" >Contact</a></li>
                <li><a href="/PC-clinic/about-us.html" class="active">About</a></li>
              </ul>
+              <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search this page">
+    <button onclick="searchText()">
+      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
+    </button>
+  </div>
             
         </nav>
+        <div>
+      <div class="content"> <div class="writing"> <h1>Services</h1>
+    <h2 class="write">We offer several services such as multiple device repairs such as phones and computer and we offer data recovery as long as software installation and more for a small price.
+</h2></div></div>
+<img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img">
+<div class="writing-2"><h1>About us</h1><h2 class="write">
+PC Clinic are a small business based in burton and  south Derbyshire collage, and we aim to please and promote leaners involvement with repairing computer hardware and software
+</h2></div>
+<img src="/PC-clinic/images/OIP.jpg" alt="image" class="website-img">
+</div>
         <script>
             const toggleButton = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -42,6 +54,83 @@
             });
           </script>
       <style>
+        .website-img{
+             left: 0;
+        bottom: 0;
+        position: absolute;
+       
+    
+    
+    display: flex;
+    width: 600px;
+    height: 300px;
+  padding: 1rem;
+  
+  
+  
+  border-radius: 1rem;
+margin-left: 50px;
+margin-bottom: 370px ;
+        }
+        .writing-2{
+             width: 600px;
+            color: white;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            margin-bottom: 370px;
+            margin-right: 70px;
+            
+        }
+        
+        .content{
+             position: relative;
+    padding: 20px;
+    min-height: 80vh;
+        }
+        
+
+        body {
+    margin: 0;
+    font-family: sans-serif;
+}
+         .college-img{
+   top: 0;
+        right: 0;
+        position: absolute;
+       
+    text-align: center;
+    
+    display: flex;
+    width: 30%;
+  padding: 1rem;
+  font-size: 1rem;
+  
+  
+  border-radius: 1rem;
+  margin-top: 10rem;
+  margin-right: 10rem;
+  margin-left: 100px;
+            }
+        .bg {
+  background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+        .write{
+           
+            color: rgb(255, 255, 255);
+        }
+        .writing{
+            width: 600px;
+            color: white;
+        }
         
         .home-photo{
             width: 20rem;
@@ -138,18 +227,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #218838;
-        }
+       
         .message {
             margin-top: 10px;
             color: green;
@@ -165,7 +243,7 @@
     <div class="footer-container">
         <div class="footer-section">
             <h3>About Us</h3>
-            <p>We provide high-quality content to help developers learn web development.</p>
+            <p>We repair and inspsire futures.</p>
         </div>
         
         <div class="footer-section">
@@ -261,8 +339,36 @@
         }
     }
 </style>
-       
+<script>
+     function searchText() {
+      // Remove previous highlights
+      const highlights = document.querySelectorAll('.highlight');
+      highlights.forEach(el => {
+        el.outerHTML = el.innerText;
+      });
 
+      const input = document.getElementById("searchInput");
+      const searchTerm = input.value.trim().toLowerCase();
+      if (!searchTerm) return;
+
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        if (node.nodeValue.toLowerCase().includes(searchTerm)) {
+          const span = document.createElement("span");
+          span.className = "highlight";
+          const regex = new RegExp(`(${searchTerm})`, 'ig');
+          span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+          const temp = document.createElement("div");
+          temp.innerHTML = span.innerHTML;
+          node.parentNode.replaceChild(temp, node);
+        }
+      }
+    }
+</script>
+       
+    </div>
+       
 
     
 </body>
