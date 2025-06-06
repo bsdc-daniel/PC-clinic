@@ -1,351 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - PC Clinic</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+    }
 
-<body>
-   <div class="bg"></div>
-    <div class="content">
-   
-        
-    
-        <nav class="navbar">
-            <div class="logo"><img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="" class="logo"></div>
-            <h1>PC-Clinic</h1>
-            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>s
-               
-            
-            <ul class="nav-links">
-            
-                
-               <li><a href="/PC-clinic/index.html" >Home</a></li>
-               <li><a href="/PC-clinic/services.html">services</a></li>
-               <li><a href="/PC-clinic/contact-us.html" >Contact</a></li>
-               <li><a href="/PC-clinic/about-us.html" class="active">About</a></li>
-             </ul>
-              <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search this page">
-    <button onclick="searchText()">
-      🔍 <!-- You can replace this with an <img src="search-icon.png"> if you prefer -->
-    </button>
-  </div>
-            
-        </nav>
-        <div>
-      <div class="content"> <div class="writing"> <h1>Services</h1>
-    <h2 class="write">We offer several services such as multiple device repairs such as phones and computer and we offer data recovery as long as software installation and more for a small price.
-</h2></div></div>
-<img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img">
-<div class="writing-2"><h1>About us</h1><h2 class="write">
-PC Clinic are a small business based in burton and  south Derbyshire collage, and we aim to please and promote leaners involvement with repairing computer hardware and software
-</h2></div>
-<img src="/PC-clinic/images/OIP.jpg" alt="image" class="website-img">
-</div>
-        <script>
-            const toggleButton = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-          
-            toggleButton.addEventListener('click', () => {
-              navLinks.classList.toggle('active');
-            });
-          </script>
-      <style>
-        .website-img{
-             left: 0;
-        bottom: 0;
-        position: absolute;
-       
-    
-    
-    display: flex;
-    width: 600px;
-    height: 300px;
-  padding: 1rem;
-  
-  
-  
-  border-radius: 1rem;
-margin-left: 50px;
-margin-bottom: 370px ;
-        }
-        .writing-2{
-             width: 600px;
-            color: white;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            margin-bottom: 370px;
-            margin-right: 70px;
-            
-        }
-        
-        .content{
-             position: relative;
-    padding: 20px;
-    min-height: 80vh;
-        }
-        
+    .bg {
+      background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
-        body {
-    margin: 0;
-    font-family: sans-serif;
-}
-         .college-img{
-   top: 0;
-        right: 0;
-        position: absolute;
-       
-    text-align: center;
-    
-    display: flex;
-    width: 30%;
-  padding: 1rem;
-  font-size: 1rem;
-  
-  
-  border-radius: 1rem;
-  margin-top: 10rem;
-  margin-right: 10rem;
-  margin-left: 100px;
-            }
-        .bg {
-  background-image: url('/PC-clinic/images/satin-soft-blue-rough-abstract-background-design_851755-207731.avif');
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
-        .write{
-           
-            color: rgb(255, 255, 255);
-        }
-        .writing{
-            width: 600px;
-            color: white;
-        }
-        
-        .home-photo{
-            width: 20rem;
-  padding: 1rem;
-  font-size: 1rem;
-  background-color: lightblue;
-  border-radius: 1rem;
-  right: 0;
-  top: 20;
-   
-   }
-    
     .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #333333;
-  color: white;
-  border-radius: 20px;
-  max-height: 22px;
-  
-}
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+      border-radius: 20px;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+    .navbar .logo img {
+      height: 40px;
+    }
 
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-}
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
 
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
 
-/* Hide nav links on small screens */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    padding: 1rem;
-    width: 200px;
-  }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
+    .search-container {
+      display: flex;
+      align-items: center;
+    }
 
-  .menu-toggle {
-    display: block;
-  }
-}
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-           
-           
-            
-           
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            margin-left: 50px;
-            margin-right: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin: 10px 0 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-       
-        .message {
-            margin-top: 10px;
-            color: green;
-            font-weight: bold;
-            display: none;
-        }
-    </style>
+    .search-container input {
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+    }
 
+    .search-container button {
+      margin-left: 5px;
+      padding: 6px;
+      border: none;
+      background: white;
+      cursor: pointer;
+    }
 
+    .content {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-    
-      <footer>
-    <div class="footer-container">
-        <div class="footer-section">
-            <h3>About Us</h3>
-            <p>We repair and inspsire futures.</p>
-        </div>
-        
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="/PC-clinic/index.html">Home</a></li>
-                <li><a href="/PC-clinic/services.html">Services</a></li>
-                <li><a href="/PC-clinic/contact-us.html">Contact</a></li>
-                <li><a href="/PC-clinic/about-us.html" class="active5">About</a></li>
-            </ul>
-        </div>
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
 
-        <div class="footer-section">
-            <h3>Follow Us</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com"><img src="/PC-clinic/images/facebook.png" alt="Facebook"></a>
-                <a href="https://www.twitter.com"><img src="/PC-clinic/images/1707226109new-twitter-logo-png.png" alt="Twitter"></a>
-                <a href="https://www.instagram.com"><img src="/PC-clinic/images/instagram.png" alt="Instagram"></a>
-            </div>
-        </div>
-    </div>
-    
-    <p class="footer-bottom">&copy; 2025 YourWebsite. All rights reserved.</p>
-</footer>
+    .writing, .writing-2 {
+      flex: 1;
+      color: white;
+      max-width: 500px;
+    }
 
-<style>
+    .write {
+      color: white;
+    }
+
+    .college-img, .website-img {
+      flex: 1;
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
     footer {
-        background-color: #222;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
+      background-color: #222;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
     }
 
     .footer-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
     }
 
     .footer-section {
-        flex: 1;
-        min-width: 250px;
-        padding: 10px;
+      flex: 1;
+      min-width: 250px;
+      padding: 10px;
     }
 
     .footer-section h3 {
-        margin-bottom: 10px;
+      margin-bottom: 10px;
     }
 
     .footer-section ul {
-        list-style: none;
-        padding: 0;
+      list-style: none;
+      padding: 0;
     }
 
-    .footer-section ul li {
-        margin: 5px 0;
+    .footer-section li a {
+      color: white;
+      text-decoration: none;
     }
 
-    .footer-section ul li a {
-        color: white;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-    .footer-section ul li a:hover {
-        color: #00bcd4; /* Light Blue Hover Effect */
-    }
-
-    .social-icons a img {
-        width: 30px;
-        margin: 5px;
-        transition: 0.3s;
-    }
-
-    .social-icons a img:hover {
-        opacity: 0.7;
+    .social-icons img {
+      width: 30px;
+      margin: 5px;
     }
 
     .footer-bottom {
-        margin-top: 20px;
-        font-size: 14px;
-        opacity: 0.8;
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.8;
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .footer-container {
-            flex-direction: column;
-            text-align: center;
-        }
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
     }
-</style>
-<script>
-     function searchText() {
-      // Remove previous highlights
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        position: absolute;
+        top: 60px;
+        right: 1rem;
+        padding: 1rem;
+        width: 200px;
+        border-radius: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar h1 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+      }
+
+      .search-container {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/PC-clinic/images/Screenshot 2025-03-31 133204.png" alt="Logo" />
+    </div>
+    <h1>PC-Clinic</h1>
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/PC-clinic/index.html">Home</a></li>
+      <li><a href="/PC-clinic/services.html">Services</a></li>
+      <li><a href="/PC-clinic/contact-us.html">Contact</a></li>
+      <li><a href="/PC-clinic/about-us.html" class="active">About</a></li>
+    </ul>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search this page" />
+      <button onclick="searchText()">🔍</button>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="section">
+      <div class="writing">
+        <h1>Services</h1>
+        <h2 class="write">
+          We offer several services such as multiple device repairs including phones and computers. We offer data recovery, software installation, and more for a small price.
+        </h2>
+      </div>
+      <img src="/PC-clinic/images/download (3).jpg" alt="college" class="college-img" />
+    </div>
+
+    <div class="section">
+      <div class="writing-2">
+        <h1>About Us</h1>
+        <h2 class="write">
+          PC Clinic is a small business based in Burton and South Derbyshire College. We aim to please and promote learner involvement with repairing computer hardware and software.
+        </h2>
+      </div>
+      <img src="/PC-clinic/images/OIP.jpg" alt="about" class="website-img" />
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We repair and inspire futures.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/PC-clinic/index.html">Home</a></li>
+          <li><a href="/PC-clinic/services.html">Services</a></li>
+          <li><a href="/PC-clinic/contact-us.html">Contact</a></li>
+          <li><a href="/PC-clinic/about-us.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><img src="/PC-clinic/images/facebook.png" alt="Facebook" /></a>
+          <a href="https://www.twitter.com"><img src="/PC-clinic/images/1707226109new-twitter-logo-png.png" alt="Twitter" /></a>
+          <a href="https://www.instagram.com"><img src="/PC-clinic/images/instagram.png" alt="Instagram" /></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2025 YourWebsite. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    function searchText() {
       const highlights = document.querySelectorAll('.highlight');
-      highlights.forEach(el => {
-        el.outerHTML = el.innerText;
-      });
+      highlights.forEach(el => el.outerHTML = el.innerText);
 
       const input = document.getElementById("searchInput");
       const searchTerm = input.value.trim().toLowerCase();
@@ -357,19 +296,13 @@ margin-bottom: 370px ;
         if (node.nodeValue.toLowerCase().includes(searchTerm)) {
           const span = document.createElement("span");
           span.className = "highlight";
-          const regex = new RegExp(`(${searchTerm})`, 'ig');
-          span.innerHTML = node.nodeValue.replace(regex, '<span class="highlight">$1</span>');
+          span.innerHTML = node.nodeValue.replace(new RegExp(`(${searchTerm})`, 'ig'), '<span class="highlight">$1</span>');
           const temp = document.createElement("div");
           temp.innerHTML = span.innerHTML;
           node.parentNode.replaceChild(temp, node);
         }
       }
     }
-</script>
-       
-    </div>
-       
-
-    
+  </script>
 </body>
 </html>
